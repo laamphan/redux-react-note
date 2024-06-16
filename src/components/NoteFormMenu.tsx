@@ -192,7 +192,7 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
                 return (
                   <Button
                     variant={"secondary"}
-                    className="font-semibold border-0 w-fit h-fit text-xs px-3 mr-1 mb-1"
+                    className="font-semibold border-0 w-fit h-fit text-xs px-3 mr-1 mb-1 bg-zinc-300  dark:bg-secondary dark:hover:bg-accent"
                     key={t + "tag"}
                     onClick={() => {
                       setTags((tags) => tags.filter((_, i) => i !== index))
@@ -214,7 +214,7 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
           <div className="items-center">
             <h2 className="text-3xl font-bold mt-3 mb-4 w-full">Subtasks :</h2>
             <Button
-              className="w-full font-semibold justify-start pl-3.5"
+              className="w-full font-semibold justify-start pl-3.5 hover:bg-zinc-200 dark:hover:bg-accent"
               variant={"ghost"}
               onClick={() => setIsAddingSubtask(!isAddingSubtask)}
             >

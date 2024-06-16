@@ -40,7 +40,7 @@ export function DropdownTags({
           role="combobox"
           aria-expanded={open}
           className={cn(
-            "font-semibold border-0 w-fit h-fit text-xs px-3 py-2 mb-1"
+            "font-semibold border-0 w-fit h-fit text-xs px-3 py-2 mb-1 bg-zinc-200 hover:bg-accent dark:bg-accent/30 dark:hover:bg-accent"
           )}
         >
           {"+ Add tag"}
