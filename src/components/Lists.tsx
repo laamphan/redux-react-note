@@ -33,14 +33,14 @@ export const Lists = ({}: ListsProps) => {
 
   return (
     <div className="my-4">
-      <h3 className="ml-2 text-xs font-bold text-zinc-700 mb-1">LISTS</h3>
+      <h3 className="ml-2 text-xs font-bold mb-1">LISTS</h3>
       <div className="flex flex-col ">
         {listState.map((l) => {
           return (
             <Button
               key={l + "list"}
               variant={"ghost"}
-              className="font-semibold border-0 justify-start hover:bg-slate-200"
+              className="font-semibold border-0 justify-start xl:hover:bg-slate-200 dark:xl:hover:bg-accent"
               onClick={() => {
                 dispatch(updateNoteRender({ type: "list", value: l }))
               }}
@@ -63,14 +63,14 @@ export const Lists = ({}: ListsProps) => {
           value={list}
           onChange={(e) => setList(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="mt-1 mb-1 xl:bg-transparent bg-white"
+          className="mt-1 mb-1"
           placeholder="Enter list name:"
           autoFocus
         />
       ) : null}
 
       <Button
-        className="w-full font-semibold text-slate-400 justify-start border-0"
+        className="w-full font-semibold justify-start border-0"
         variant={"ghost"}
         onClick={() => setIsAddingList(!isAddingList)}
       >

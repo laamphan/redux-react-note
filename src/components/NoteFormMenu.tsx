@@ -9,7 +9,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/Sheet"
-// import * as React from "react"
 import { RootState } from "@/lib/redux/store"
 import { PencilIcon, PlusIcon } from "lucide-react"
 import { useEffect, useState } from "react"
@@ -108,7 +107,7 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
 
   return (
     <Sheet>
-      <SheetTrigger className="text-slate-400" asChild>
+      <SheetTrigger className="" asChild>
         {!note ? (
           <Button
             onClick={() => {
@@ -146,7 +145,8 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
       </SheetTrigger>
       <SheetContent
         side={"right"}
-        className="overflow-y-auto bg-white xl:bg-[#f4f4f4] m-0 xl:m-6 xl:h-[calc(100%-3rem)] h-full rounded-xl"
+        className="overflow-y-auto 
+        m-0 xl:m-6 xl:h-[calc(100%-3rem)] h-full rounded-xl xl:bg-[#f4f4f4] dark:xl:bg-background"
       >
         <SheetHeader>
           <SheetTitle className="text-3xl font-bold mb-4">Task :</SheetTitle>
@@ -156,7 +156,7 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
             <Input
               id="title"
               placeholder="Renew driver's license"
-              className="col-span-7 xl:bg-transparent bg-white"
+              className="col-span-7"
               value={noteFormData.title}
               onChange={(e) =>
                 setNoteFormData({ ...noteFormData, title: e.target.value })
@@ -165,7 +165,7 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
           </div>
           <div className="grid grid-cols-4 items-center gap-4">
             <ReactTextareaAutosize
-              className="col-span-7 min-h-[80px] flex w-full rounded-md border border-input xl:bg-transparent bg-white px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              className="col-span-7 min-h-[80px] flex w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-background bg-transparent"
               placeholder="Description"
               value={noteFormData.content}
               onChange={(e) =>
@@ -214,7 +214,7 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
           <div className="items-center">
             <h2 className="text-3xl font-bold mt-3 mb-4 w-full">Subtasks :</h2>
             <Button
-              className="w-full font-semibold text-slate-400 justify-start pl-3.5"
+              className="w-full font-semibold justify-start pl-3.5"
               variant={"ghost"}
               onClick={() => setIsAddingSubtask(!isAddingSubtask)}
             >
@@ -222,7 +222,7 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
                 strokeWidth={3.7}
                 className="h-4 w-4 mr-2.5 font-bold "
               />
-              Add New Task
+              Add Subtask
             </Button>
             {isAddingSubtask ? (
               <Input
@@ -233,7 +233,7 @@ export const NoteFormMenu = ({ note }: NoteFormMenuProps) => {
                   setSubtask({ name: e.target.value, checked: false })
                 }
                 onKeyDown={handleKeyDown}
-                className="mt-1 mb-1 xl:bg-transparent bg-white"
+                className="mt-1 mb-1"
                 autoFocus
               />
             ) : null}

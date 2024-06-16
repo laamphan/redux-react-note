@@ -22,6 +22,7 @@ import { addList } from "../features/list/listSlice"
 import { updateNoteRender } from "../features/note/noteSlice"
 import { addTag } from "../features/tag/tagSlice"
 import { listColors } from "../lib/utils"
+import { ModeToggle } from "./ModeToggle"
 import { Input } from "./ui/Input"
 import { Separator } from "./ui/Separator"
 
@@ -68,11 +69,12 @@ export const MenuOnToggle = ({}: MenuOnToggleProps) => {
         </Button>
       </SheetTrigger>
       <SheetContent side={"left"} className="overflow-y-auto">
-        <SheetHeader>
-          <SheetTitle className="text-2xl">Menu</SheetTitle>
+        <SheetHeader className="flex flex-row justify-between items-center mb-10">
+          <SheetTitle className="text-3xl font-bold">Menu</SheetTitle>
+          <ModeToggle />
         </SheetHeader>
         <div className="mt-7 ml-1 mb-2">
-          <h3 className="text-xs font-bold text-zinc-700 mb-1">TASKS</h3>
+          <h3 className="text-xs font-bold mb-1">TASKS</h3>
           <SheetClose asChild>
             <Button
               className="w-full font-semibold border-0 justify-start mb-1"
@@ -145,7 +147,7 @@ export const MenuOnToggle = ({}: MenuOnToggleProps) => {
         <Separator />
         {/* <Lists /> */}
         <div className="my-4">
-          <h3 className="ml-2 text-xs font-bold text-zinc-700 mb-1">LISTS</h3>
+          <h3 className="ml-2 text-xs font-bold mb-1">LISTS</h3>
           <div className="flex flex-col ">
             {listState.map((l) => {
               return (
@@ -177,14 +179,14 @@ export const MenuOnToggle = ({}: MenuOnToggleProps) => {
               value={list}
               onChange={(e) => setList(e.target.value)}
               onKeyDown={handleKeyDownList}
-              className="mt-1 mb-1 xl:bg-transparent bg-white"
+              className="mt-1 mb-1"
               placeholder="Enter list name:"
               autoFocus
             />
           ) : null}
 
           <Button
-            className="w-full font-semibold text-slate-400 justify-start border-0"
+            className="w-full font-semibold justify-start border-0"
             variant={"ghost"}
             onClick={() => setIsAddingList(!isAddingList)}
           >
@@ -200,7 +202,7 @@ export const MenuOnToggle = ({}: MenuOnToggleProps) => {
 
         {/* <Tags /> */}
         <div className="my-4">
-          <h3 className="ml-2 text-xs font-bold text-zinc-700 mb-3">TAGS</h3>
+          <h3 className="ml-2 text-xs font-bold mb-3">TAGS</h3>
           <div className="inline-flex flex-wrap p-1">
             {tagState.tags.map((t) => {
               return (
@@ -212,8 +214,6 @@ export const MenuOnToggle = ({}: MenuOnToggleProps) => {
                     onClick={() =>
                       dispatch(updateNoteRender({ type: "tag", value: t }))
                     }
-
-                    // onClick={() => dispatch(deleteTag(t))}
                   >
                     {t}
                   </Button>
@@ -225,7 +225,7 @@ export const MenuOnToggle = ({}: MenuOnToggleProps) => {
                 placeholder="Enter new tag:"
                 type="text"
                 value={tag}
-                className="xl:bg-transparent bg-white font-semibold mt-1 mr-1 w-fit outline-none inline h-fit rounded-md  pl-3 pr-2 py-2 text-xs  placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
+                className="font-semibold mt-1 mr-1 w-fit outline-none inline h-fit rounded-md  pl-3 pr-2 py-2 text-xs  placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
                 onChange={(e) => setTag(e.target.value)}
                 maxLength={30}
                 onKeyDown={handleKeyDownTag}
@@ -233,7 +233,7 @@ export const MenuOnToggle = ({}: MenuOnToggleProps) => {
               />
             ) : null}
             <Button
-              className="font-semibold border-0 w-fit h-fit text-xs px-3 py-2 mr-1 mt-1 inline bg-slate-200"
+              className="font-semibold border-0 w-fit h-fit text-xs px-3 py-2 mr-1 mt-1 inline"
               variant={"secondary"}
               onClick={() => {
                 setIsAddingTag(!isAddingTag)

@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux"
 import { updateNoteRender } from "../features/note/noteSlice"
 import { Lists } from "./Lists"
 import { MenuOnToggle } from "./MenuOnToggle"
+import { ModeToggle } from "./ModeToggle"
 import { NoteFormMenu } from "./NoteFormMenu"
 import { NoteList } from "./NoteList"
 import { Tags } from "./Tags"
@@ -19,16 +20,17 @@ export function App() {
 
   return (
     <div className="flex">
-      <div className="hidden xl:block w-full max-w-[20rem] fixed left-0 h-full">
+      <div className="hidden xl:block w-full max-w-[21.5rem] fixed left-0 h-full">
         <div className="h-full">
-          <div className="overflow-y-auto m-4 p-4  h-[calc(100%-2rem)] rounded-xl bg-[#f4f4f4] ">
-            <div className="flex flex-col space-y-2 sm:text-left">
-              <div className="font-semibold text-foreground text-2xl">Menu</div>
+          <div className="overflow-y-auto m-4 p-4 h-[calc(100%-2rem)] rounded-xl bg-[#f4f4f4] dark:bg-background">
+            <div className="flex flex-row justify-between items-center sm:text-left">
+              <div className="text-foreground text-3xl font-bold">Menu</div>
+              <ModeToggle />
             </div>
             <div className="mt-7 ml-1 mb-2">
-              <h3 className="text-xs font-bold text-zinc-700 mb-1">NOTES</h3>
+              <h3 className="text-xs font-bold mb-1">TASKS</h3>
               <Button
-                className="w-full font-semibold border-0 justify-start mb-1 hover:bg-slate-200"
+                className="w-full font-semibold border-0 justify-start mb-1 hover:bg-zinc-200 dark:hover:bg-accent"
                 variant={"ghost"}
                 onClick={() => {
                   dispatch(
@@ -43,7 +45,7 @@ export function App() {
                 Upcoming
               </Button>
               <Button
-                className="w-full font-semibold border-0 justify-start mb-1 hover:bg-slate-200"
+                className="w-full font-semibold border-0 justify-start mb-1 hover:bg-zinc-200 dark:hover:bg-accent"
                 variant={"ghost"}
                 onClick={() => {
                   dispatch(
@@ -58,7 +60,7 @@ export function App() {
                 Today
               </Button>
               <Button
-                className="w-full font-semibold border-0 justify-start mb-1 hover:bg-slate-200"
+                className="w-full font-semibold border-0 justify-start mb-1 hover:bg-zinc-200 dark:hover:bg-accent"
                 variant={"ghost"}
                 onClick={() => {
                   dispatch(
@@ -73,7 +75,7 @@ export function App() {
                 This month
               </Button>
               <Button
-                className="w-full font-semibold border-0 justify-start mb-1 hover:bg-slate-200"
+                className="w-full font-semibold border-0 justify-start mb-1 hover:bg-zinc-200 dark:hover:bg-accent"
                 variant={"ghost"}
                 onClick={() => {
                   dispatch(
@@ -96,8 +98,7 @@ export function App() {
           </div>
         </div>
       </div>
-      <div className="hidden xl:block w-[20rem]"></div>
-      <div className="grow px-5 py-2">
+      <div className="w-full px-5 py-2 mx-0 xl:ml-[21.5rem] xl:mr-[27rem]">
         <div className="px-1 py-5 mb-6">
           <MenuOnToggle />
           <h1
@@ -118,7 +119,7 @@ export function App() {
         <NoteFormMenu />
         <NoteList />
       </div>
-      <div className="hidden xl:block h-screen top-0 w-[26rem]"></div>
+      <div className="hidden xl:block h-screen top-0"></div>
     </div>
   )
 }

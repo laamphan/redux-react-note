@@ -42,7 +42,7 @@ export function DropdownLists({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className={cn("w-fit justify-between xl:bg-transparent bg-white")}
+          className={cn("w-fit justify-between bg-transparent")}
         >
           {list.length > 0 ? (
             list

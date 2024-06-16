@@ -53,7 +53,7 @@ const initialState: NoteState = {
       tags: ["HCM"],
       subtasks: [
         {
-          name: "Subtask",
+          name: "Book a flight back to @HT",
           checked: false,
         },
       ],
@@ -240,7 +240,6 @@ export const noteSlice = createSlice({
   },
 })
 
-// Action creators are generated for each case reducer function
 export const {
   addNote,
   updateNote,
