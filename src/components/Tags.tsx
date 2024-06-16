@@ -1,6 +1,6 @@
+import { RootState } from "@/lib/redux/store"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../app/store"
 import { updateNoteRender } from "../features/note/noteSlice"
 import { addTag } from "../features/tag/tagSlice"
 import { Button } from "./ui/Button"

@@ -16,10 +16,10 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/Popover"
+import { RootState } from "@/lib/redux/store"
 import { cn, listColors } from "@/lib/utils"
 import { Dispatch, SetStateAction, useState } from "react"
 import { useSelector } from "react-redux"
-import { RootState } from "../app/store"
 
 interface DropdownListsProps {
   listsState: string[]

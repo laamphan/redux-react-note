@@ -6,16 +6,7 @@ export interface TagState {
 }
 
 const initialState: TagState = {
-  tags: [
-    "Family",
-    "Friends",
-    "HCM",
-    "Ha Noi",
-    "Ha Tinh",
-    "France",
-    "LAN",
-    "Code",
-  ],
+  tags: ["Family", "Friends", "HCM", "Ha Noi", "France", "LAN", "Code"],
 }
 
 export const tagSlice = createSlice({
@@ -38,7 +29,6 @@ export const tagSlice = createSlice({
   },
 })
 
-// Action creators are generated for each case reducer function
 export const { addTag, updateTag, deleteTag } = tagSlice.actions
 
 export default tagSlice.reducer

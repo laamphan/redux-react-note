@@ -10,12 +10,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/Sheet"
 // import * as React from "react"
+import { RootState } from "@/lib/redux/store"
 import { PencilIcon, PlusIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import ReactTextareaAutosize from "react-textarea-autosize"
 import { v4 as uuidV4 } from "uuid"
-import { RootState } from "../app/store"
 import {
   NoteType,
   SubtaskType,

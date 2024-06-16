@@ -50,7 +50,7 @@ const initialState: NoteState = {
       content: "@ Hometown",
       dueDate: "Sat Jun 29 2024 00:00:00 GMT+0700 (Indochina Time)",
       list: "Personal",
-      tags: ["Ha Tinh"],
+      tags: ["HCM"],
       subtasks: [
         {
           name: "Subtask",

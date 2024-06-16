@@ -1,8 +1,8 @@
+import listReducer, { ListState } from "@/features/list/listSlice"
+import noteReducer, { NoteState } from "@/features/note/noteSlice"
+import tagReducer, { TagState } from "@/features/tag/tagSlice"
 import { RootStateValidator } from "@/lib/validators/root-state"
 import { configureStore } from "@reduxjs/toolkit"
-import listReducer, { ListState } from "../features/list/listSlice"
-import noteReducer, { NoteState } from "../features/note/noteSlice"
-import tagReducer, { TagState } from "../features/tag/tagSlice"
 
 const loadState = () => {
   try {

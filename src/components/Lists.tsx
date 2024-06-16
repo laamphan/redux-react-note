@@ -1,7 +1,7 @@
+import { RootState } from "@/lib/redux/store"
 import { PlusIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../app/store"
 import { addList } from "../features/list/listSlice"
 import { updateNoteRender } from "../features/note/noteSlice"
 import { listColors } from "../lib/utils"

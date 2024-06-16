@@ -1,7 +1,7 @@
+import { store } from "@/lib/redux/store.ts"
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { Provider } from "react-redux"
-import { store } from "../app/store.ts"
 import "../styles/globals.css"
 import { App } from "./App.tsx"
 

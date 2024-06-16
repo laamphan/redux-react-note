@@ -7,6 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/Sheet"
+import { RootState } from "@/lib/redux/store"
 import {
   CalendarDays,
   ChevronsRight,
@@ -17,7 +18,6 @@ import {
 } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../app/store"
 import { addList } from "../features/list/listSlice"
 import { updateNoteRender } from "../features/note/noteSlice"
 import { addTag } from "../features/tag/tagSlice"

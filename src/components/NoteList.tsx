@@ -4,10 +4,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/Accordion"
+import { RootState } from "@/lib/redux/store"
 import { CalendarX, X } from "lucide-react"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../app/store"
 import {
   deleteNote,
   updateNoteCheck,
