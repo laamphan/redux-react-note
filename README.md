@@ -1,3 +1,5 @@
+# Modern note-taking app built with React and Redux, featuring a clean, responsive UI
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
